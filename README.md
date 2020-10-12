@@ -147,6 +147,15 @@ And that's it!
 
 If you're using more than one service at a time in your code and get two different `ibm-credentials.env` files, just put the contents together in one `ibm-credentials.env` file and the SDK will handle assigning credentials to their appropriate services.
 
+**Special Note**: Due to legacy issues in Assistant V1 and V2 the following parameter `serviceName` must be added when creating the service object:
+```js
+const AssistantV1 = require('ibm-watson/assistant/v1');
+const assistant = new AssistantV1({
+  version: '2020-04-01',
+  serviceName: 'assistant'
+})
+```
+
 If you would like to configure the location/name of your credential file, you can set an environment variable called `IBM_CREDENTIALS_FILE`. **This will take precedence over the locations specified above.** Here's how you can do that:
 
 ```bash
