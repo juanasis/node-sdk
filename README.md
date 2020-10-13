@@ -152,14 +152,14 @@ If you're using more than one service at a time in your code and get two differe
 const AssistantV1 = require('ibm-watson/assistant/v1');
 const assistant = new AssistantV1({
   version: '2020-04-01',
-  serviceName: 'assistant'
+  serviceName: 'assistant',
 })
 ```
 ```js
 const VisualRecognitionV3 = require('ibm-watson/visual-recognition/v3');
 const assistant = new VisualRecognitionV3({
   version: '2018-03-19',
-  serviceName: 'visual-recognition'
+  serviceName: 'visual-recognition',
 })
 ```
 It is worth noting that implementing this will prioritize reading the credentials file over using the `VCAP_SERVICES` variable when pushing to IBM Cloud. This will become an issue if you do not push a credentials file to the cloud as VCAP does not know how to interpret these `serviceName` parameters. Credential priority follows this order: 
